@@ -48,3 +48,11 @@ jobs:
             -Dsonar.java.binaries=calculator-backend/target/classes
             -Dsonar.coverage.jacoco.xmlReportPaths=calculator-backend/target/site/jacoco/jacoco.xml
             -Dsonar.sourceEncoding=UTF-8
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main' && success()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          keep_files: true
