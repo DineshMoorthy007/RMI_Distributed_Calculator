@@ -17,6 +17,7 @@ class CalculatorApplicationTest {
         assertDoesNotThrow(() -> {
             // Note: We don't actually call main() as it would start the server
             // This test verifies the class structure is valid
+            @SuppressWarnings("unused")
             CalculatorApplication app = new CalculatorApplication();
         });
     }
