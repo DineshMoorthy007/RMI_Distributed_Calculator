@@ -7,13 +7,13 @@ import java.rmi.registry.LocateRegistry;
 
     public static void startRmiServer() {
         try {
-<span class="nc" id="L10">            LocateRegistry.createRegistry(1099); // RMI registry port</span>
-<span class="nc" id="L11">            CalculatorImpl calculator = new CalculatorImpl();</span>
-<span class="nc" id="L12">            Naming.rebind(&quot;rmi://localhost:1099/CalculatorService&quot;, calculator);</span>
-<span class="nc" id="L13">            System.out.println(&quot; RMI Calculator Server started at rmi://localhost:1099/CalculatorService&quot;);</span>
-<span class="nc" id="L14">        } catch (Exception e) {</span>
-<span class="nc" id="L15">            System.err.println(&quot; Error starting RMI server: &quot; + e.getMessage());</span>
-<span class="nc" id="L16">        }</span>
-<span class="nc" id="L17">    }</span>
+<span class="fc" id="L10">            LocateRegistry.createRegistry(1099); // RMI registry port</span>
+<span class="fc" id="L11">            CalculatorImpl calculator = new CalculatorImpl();</span>
+<span class="fc" id="L12">            Naming.rebind(&quot;rmi://localhost:1099/CalculatorService&quot;, calculator);</span>
+<span class="fc" id="L13">            System.out.println(&quot; RMI Calculator Server started at rmi://localhost:1099/CalculatorService&quot;);</span>
+<span class="fc" id="L14">        } catch (Exception e) {</span>
+<span class="fc" id="L15">            System.err.println(&quot; Error starting RMI server: &quot; + e.getMessage());</span>
+<span class="fc" id="L16">        }</span>
+<span class="fc" id="L17">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

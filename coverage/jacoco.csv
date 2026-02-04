@@ -1,7 +1,7 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 calculator-backend,com.example.calculator,CalculatorController,4,37,1,1,1,9,1,7,0,7
-calculator-backend,com.example.calculator,RmiClient,57,0,7,0,16,0,8,0,3,0
+calculator-backend,com.example.calculator,RmiClient,19,38,1,6,6,10,2,6,1,2
 calculator-backend,com.example.calculator,CalculatorImpl,0,28,0,2,0,7,0,6,0,5
-calculator-backend,com.example.calculator,CalculatorServer,24,0,0,0,9,0,2,0,2,0
+calculator-backend,com.example.calculator,CalculatorServer,3,21,0,0,1,8,1,1,1,1
 calculator-backend,com.example.calculator,CalculatorApplication,6,3,0,0,3,1,1,1,1,1
 calculator-backend,com.example.calculator,CoverageResourceConfig,0,23,0,0,0,5,0,2,0,2
