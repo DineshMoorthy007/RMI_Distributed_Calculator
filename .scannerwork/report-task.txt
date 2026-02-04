@@ -1,7 +1,0 @@
-organization=dineshmoorthy007
-projectKey=DineshMoorthy007_RMI_Distributed_Calculator
-serverUrl=https://sonarcloud.io
-serverVersion=8.0.0.79550
-dashboardUrl=https://sonarcloud.io/dashboard?id=DineshMoorthy007_RMI_Distributed_Calculator&branch=main
-ceTaskId=AZwp31jrzXaigSk-DtX9
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZwp31jrzXaigSk-DtX9

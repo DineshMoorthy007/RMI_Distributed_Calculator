@@ -1,142 +1,0 @@
-
-1.0+DineshMoorthy007_RMI_Distributed_CalculatorJavaFrontend"1770229024110*java2.Bû
-X
-Scalculator-backend/src/main/java/com/example/calculator/CoverageResourceConfig.java2
-	
-type3
-	
-MAIN4
-
-package6
-
-com.example.calculator7
-2
--com.example.calculator.CoverageResourceConfig9
-
-class10
-
-access11
-
-public12
-
-
-full-range13
-
-(7:1)-(15:2)14
-
-simple-name15
-
-CoverageResourceConfig16
-.
-(Recovered#typeBindingLWebMvcConfigurer;018
-
-unknown19
-
-
-implements20
-
-Configuration22
-
-annotated by23
-+
-%Recovered#typeBindingLConfiguration;025
-
-
-uses26
-c
-]com.example.calculator.CoverageResourceConfig#addResourceHandlers(LResourceHandlerRegistry;)V28
-
-method29
-
-(9:5)-(14:6)30
-
-addResourceHandlers31
-5
-/Recovered#typeBindingLResourceHandlerRegistry;033
-
-	has param34
-
-is type35J
-
-1
-12
-
-
-3
-4 Z
-
-5
-5768jè
-G
-8B
-8910 *
-1 ($:5B$
-
-
-11
-12
-
-
-13
-14
-
-
-15
-16
-M
-27G
-272829 *
-1
- 
-($28:5B$
-
-
-11
-12
-
-
-13
-30
-
-
-15
-31
-
-21
-212219
-
-24
-242519
-
-32
-323319
-
-17
-171819r¹
-
-81720*
-10 (@
-
-82123*
-1 (
-
-82426*
-1 (
-
-81726*
-10 (@
-
-273234*
-1
-% 
-(<
-
-273235*
-1
-= 
-(E
-
-273226*
-1
-% 
-(<

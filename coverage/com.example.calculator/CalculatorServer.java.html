@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CalculatorServer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">calculator-backend</a> &gt; <a href="index.source.html" class="el_package">com.example.calculator</a> &gt; <span class="el_source">CalculatorServer.java</span></div><h1>CalculatorServer.java</h1><pre class="source lang-java linenums">package com.example.calculator;
+
+import java.rmi.Naming;
+import java.rmi.registry.LocateRegistry;
+
+<span class="nc" id="L6">public class CalculatorServer {</span>
+
+    public static void startRmiServer() {
+        try {
+<span class="nc" id="L10">            LocateRegistry.createRegistry(1099); // RMI registry port</span>
+<span class="nc" id="L11">            CalculatorImpl calculator = new CalculatorImpl();</span>
+<span class="nc" id="L12">            Naming.rebind(&quot;rmi://localhost:1099/CalculatorService&quot;, calculator);</span>
+<span class="nc" id="L13">            System.out.println(&quot; RMI Calculator Server started at rmi://localhost:1099/CalculatorService&quot;);</span>
+<span class="nc" id="L14">        } catch (Exception e) {</span>
+<span class="nc" id="L15">            System.err.println(&quot; Error starting RMI server: &quot; + e.getMessage());</span>
+<span class="nc" id="L16">        }</span>
+<span class="nc" id="L17">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
