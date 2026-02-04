@@ -52,10 +52,16 @@ jobs:
             -Dsonar.coverage.jacoco.xmlReportPaths=calculator-backend/target/site/jacoco/jacoco.xml
             -Dsonar.sourceEncoding=UTF-8
 
+      - name: Prepare deployment
+        run: |
+          mkdir -p deploy
+          cp index.html styles.css script.js deploy/
+          cp -R coverage deploy/
+
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main' && success()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          keep_files: true
+          publish_dir: ./deploy
+          keep_files: false
