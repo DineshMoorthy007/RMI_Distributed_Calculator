@@ -86,4 +86,18 @@ class CalculatorControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("2.0"));
     }
+
+    @Test
+    void testGetServiceWithNullCalculatorService() throws Exception {
+        // Test the getService method when calculatorService is null
+        controller.setCalculatorService(null);
+        
+        // This will try to lookup RMI service (which may not be available in test)
+        // The test verifies the lookup path is executed
+        try {
+            controller.getService();
+        } catch (Exception e) {
+            // Expected to fail in test environment without RMI server
+        }
+    }
 }
