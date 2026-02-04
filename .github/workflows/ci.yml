@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build-test-analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "21"
+          cache: "maven"
+
+      - name: Build and test backend
+        run: mvn -f calculator-backend/pom.xml test
+
+      - name: Prepare coverage report for frontend
+        run: |
+          mkdir -p coverage
+          cp -R calculator-backend/target/site/jacoco/* coverage/
+
+      - name: Upload coverage artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage
+
+      - name: SonarQube scan
+        uses: sonarsource/sonarqube-scan-action@v3
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        with:
+          args: >-
+            -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
+            -Dsonar.projectName=RMI_Calculator
+            -Dsonar.sources=calculator-backend/src/main/java
+            -Dsonar.tests=calculator-backend/src/test/java
+            -Dsonar.java.binaries=calculator-backend/target/classes
+            -Dsonar.coverage.jacoco.xmlReportPaths=calculator-backend/target/site/jacoco/jacoco.xml
+            -Dsonar.sourceEncoding=UTF-8
