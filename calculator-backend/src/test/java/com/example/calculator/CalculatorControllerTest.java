@@ -8,6 +8,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.rmi.RemoteException;
 
+import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -99,5 +100,15 @@ class CalculatorControllerTest {
         } catch (Exception e) {
             // Expected to fail in test environment without RMI server
         }
+    }
+
+    @Test
+    void testGetServiceReturnsInjectedService() throws Exception {
+        TestCalculator testCalc = new TestCalculator();
+        controller.setCalculatorService(testCalc);
+        
+        Calculator service = controller.getService();
+        assertNotNull(service);
+        assertEquals(testCalc, service);
     }
 }
